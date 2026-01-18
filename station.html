@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>স্টেশন ভিত্তিক সার্চ - RailSheba</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <nav class="glass-nav">
+        <div class="logo">🚆 RailSheba</div>
+        <ul>
+            <li><a href="index.html">হোম</a></li>
+            <li><a href="station.html" class="active">স্টেশন তথ্য</a></li>
+            <li><a href="route.html">রুট সার্চ</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section" style="height: auto; padding-top: 50px;">
+        <div class="glass-card" style="width: 100%; max-width: 500px;">
+            <h2 style="margin-bottom: 20px;">নিকটস্থ স্টেশনের শিডিউল</h2>
+            
+            <div class="input-box">
+                <label>বিভাগ</label>
+                <select id="division" onchange="loadDistricts()" style="width: 100%; padding: 12px; border-radius: 10px; margin-bottom: 15px;">
+                    <option value="">নির্বাচন করুন</option>
+                    <option value="dhaka">ঢাকা</option>
+                    <option value="chittagong">চট্টগ্রাম</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>জেলা</label>
+                <select id="district" onchange="loadStations()" disabled style="width: 100%; padding: 12px; border-radius: 10px; margin-bottom: 15px;">
+                    <option value="">আগে বিভাগ বেছে নিন</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>স্টেশন</label>
+                <select id="station" disabled style="width: 100%; padding: 12px; border-radius: 10px; margin-bottom: 25px;">
+                    <option value="">আগে জেলা বেছে নিন</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary" style="width: 100%;" onclick="getSchedule()">সার্চ করুন</button>
+        </div>
+    </section>
+
+    <div id="resultArea" style="padding: 30px 8%;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
